@@ -1,6 +1,6 @@
 const express=require('express');
 const path=require('path');
-const port=3000;
+const port=process.env.PORT || 3000;
 
 const db=require('./config/mongoose');
 const Contact=require('./models/contact');
@@ -104,7 +104,7 @@ app.get('/delete-contact', function(req, res){
 
 });
 
-app.listen(process.env.port || port,function(err){
+app.listen(port,function(err){
     if(err){ console.log('Error in running the server',err); }
-    console.log('My express server in running on port',process.env.port);
+    console.log(`My express server in running on port ${port}`);
 });
