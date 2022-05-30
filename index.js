@@ -106,5 +106,5 @@ app.get('/delete-contact', function(req, res){
 
 app.listen(process.env.port || port,function(err){
     if(err){ console.log('Error in running the server',err); }
-    console.log('My express server in running on port',process.env.port);
+    console.log(`My express server in running on port ${port}`);
 });
